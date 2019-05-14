@@ -1,0 +1,117 @@
+{% extends "products/base.html" %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block body %}
+
+{% include "products/navbar.html" %}
+
+<div class="container">
+
+    {% if empty %}
+
+    <h1> {{ empty_message }}</h1>
+
+    {% else %}
+
+        <form name=filterform class="form m-3" method='POST' action='{% url "all_orders" %}'>
+            {% csrf_token %}
+            <div class="dropdown">
+                <button class="btn btn-outline-info dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% if fil %}
+                        {{ fil }}
+                    {% else %}
+                        All Orders
+                    {% endif %}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" name="filter" type="submit"
+                        value="All Orders">All Orders</button>
+                    {% for statuse in statuses %}
+                    <button class="dropdown-item" name="filter" type="submit"
+                        value="{{ statuse }}">{{ statuse }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+        <table class="table">
+
+            <thead>
+                <th>Orders</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Created</th>
+                <th>Status</th>
+            </thead>
+            {% for item in all_orders %}
+            <tr>
+                <td>
+                    Order #{{ item.order_id }}
+
+
+                    <ul>
+                        {% for item in item.cart.cartitem_set.all %}
+
+                        <li>
+                            {{ item.quantity }} {{ item.size }} size {{ item.product }} for ${{ item.line_total }}
+
+                            <ul>
+                                {% if item.topping1 %}
+                                <li>{{ item.topping1 }}</li>
+                                {% endif %}
+                                {% if item.topping2 %}
+                                <li>{{ item.topping2 }}</li>
+                                {% endif %}
+                                {% if item.topping3 %}
+                                <li>{{ item.topping3 }}</li>
+                                {% endif %}
+                            </ul>
+
+                        </li>
+
+                        {% endfor %}
+                    </ul>
+                <td class="align-middle">
+                    {{ item.user }}
+                </td>
+                <td class="align-middle">
+                    ${{ item.cart.total }}
+                </td>
+
+                </td>
+                <td class="align-middle">
+                    {{ item.timestamp }}
+                </td>
+
+                <td class="align-middle">
+                    <form name=statusform class="form" method='POST' action='{% url "all_orders" %}'>
+                        {% csrf_token %}
+                        <div class="dropdown">
+                            <button class="btn btn-info dropdown-toggle btn-block" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ item.status }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for statuse in statuses %}
+                                <button class="dropdown-item" name="{{ statuse }}" type="submit"
+                                    value="{{item}}">{{ statuse }}</button>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+
+
+        {% endif %}
+
+        {% endblock %}

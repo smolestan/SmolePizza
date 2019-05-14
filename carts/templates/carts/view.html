@@ -1,0 +1,92 @@
+{% extends "products/base.html" %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+{% block body %}
+
+{% include "products/navbar.html" %}
+
+<div class="container">
+
+{% if empty %}
+    <div class="container jumbotron mt-5">
+        <h3 style="text-align: center">{{ empty_message }}</h3>
+    </div>
+{% else %}
+
+    <table class="table">
+
+        <thead>
+            <th>Item</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th></th>
+        </thead>
+
+        {% for item in cart.cartitem_set.all %}
+
+            <tr>
+                <td>
+                    {{ item.product }}
+                    <ul>
+                        {% if item.topping1 %}
+                            <li>{{ item.topping1 }}</li>
+                        {% endif %}
+                        {% if item.topping2 %}
+                            <li>{{ item.topping2 }}</li>
+                        {% endif %}
+                        {% if item.topping3 %}
+                            <li>{{ item.topping3 }}</li>
+                        {% endif %}
+                    </ul>
+                </td>
+                <td>
+                    {{ item.size }}
+                </td>
+                <td>
+                    ${{ item.price }}
+                </td>
+                <td>
+                    {{ item.quantity }}
+                </td>
+                <td>
+                    ${{ item.line_total }}
+                </td>
+                <td>
+                    <form class="form" method='POST' action='{% url "update_cart" item.product.id %}'>
+                        {% csrf_token %}
+                        <input name='rem' value="{{ item.id }}" id='rem' hidden>
+                        <input class="btn btn-outline-dark my-1" type="submit" value='Remove'>
+                    </form>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+        <tfoot>
+            <tr class="font-weight-bold">
+                <td>Total:</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${{ cart.total }}</td>
+                <td></td>
+            </tr>
+        </tfoot>
+
+    </table>
+    <div class="row justify-content-center align-items-center">
+        <a class="btn btn-warning" href="{% url 'checkout' %}" role="button">Checkout</a>
+    </div>
+    <div class="row justify-content-center align-items-center">
+        <p>By pressing Checkout button you confirm the items in the shopping cart, and the total for placing an order.</p>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

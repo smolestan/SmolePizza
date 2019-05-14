@@ -1,0 +1,32 @@
+{% extends "products/base.html" %}
+
+{% block title %}
+Pizza
+{% endblock %}
+
+{% block body %}
+
+{% include "products/navbar.html" %}
+
+<div class="container py-5">
+
+  <h3 style="text-align: center">{{ kind }}</h3>
+
+    <div class="card-deck">
+    {% for product in products %}
+    {% if kind == product.kind %}
+        <a href="{% url 'products' product.id %}" class="card my-3 text-center" style="min-width: 25rem;">
+          <img src="" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title"> {{ product.variation }} </h5>
+            <p class="card-text">{{ product.variation.description }}</p>
+          </div>
+        </a>
+      {% endif %}
+    {% empty %}
+    <h4> No products </h4>
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

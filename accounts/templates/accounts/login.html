@@ -1,0 +1,113 @@
+{% extends "products/base.html" %}
+
+{% block title %}
+Pizza
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #F4542E">
+    <a class="navbar-brand m-1 font-weight-bold" id="brand" href="{% url 'index' %}" style="color:white">Pinocchio's Pizza & Subs</a>
+
+    <div class="navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+            <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <li class="nav-item">{{ login_form.username }} {{ login_form.password }}
+                <button name='submit' class="btn btn-outline-light" type="submit" value='sign_in'>Login</button>
+                <div style="color:whitesmoke">
+                    {% if registration_form.errors.password_conf.as_json != '[{"message": "Passwords do not match", "code": ""}]' and registration_form.errors.new_username.as_json != '[{"message": "This username has already been registered", "code": ""}]' and registration_form.errors.email.as_json != '[{"message": "This email has already been registered", "code": ""}]' and reg_message != "Account created, please login" %}
+                        {% for item in login_form.errors.username %}
+                            {{ item }}
+                        {% endfor %}
+                        {% for item in login_form.errors.password %}
+                            {{ item }}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </li>
+            </form>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-lg m-3">
+            <div class="row">
+                <div class="col-md">
+
+                    <h1>Welcome to Pinocchio's Pizza & Subs</h1>
+                    <h4>
+                        74 Winthrop Street<br>Harvard Square<br>617-876-4897<br>pinocchiospizza1@gmail.com
+                    </h4>
+                </div>
+                <div class="float m-3">
+                    <img src="http://www.pinocchiospizza.net/images/pinocchio_72.gif" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md m-3">
+            <h1 style="color: rgb(0, 88, 104)">Create an account</h1>
+
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        {{ registration_form.first_name }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ registration_form.last_name }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        {{ registration_form.new_username }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ registration_form.email }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        {{ registration_form.new_password }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ registration_form.password_conf }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <button name='submit_reg_form' type="submit" value="sign_up" class="btn btn-info">Register</button>
+                    </div>
+                    <div class="col-md-6" style="color:rgb(248, 51, 51)">
+                        {% if login_form.errors.password.as_json != '[{"message": "Invalid Password", "code": ""}]' and login_form.errors.username.as_json != '[{"message": "Invalid Username", "code": ""}]' %}
+                            <ul>
+                            {% for item in registration_form.errors.password_conf %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                            {% for item in registration_form.errors.email %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                            {% for item in registration_form.errors.new_username %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        {{ reg_message }}
+                    <div >
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+</div>
+<div class="container text-center">
+<h6>Noch's has reached a landmark this year......50 years in business! We've been feeding Harvard and the
+        surrounding area since 1966!
+        <br>We sell award-winning sicilian-style pizza and mouth-watering steak subs! We have over 500 reviews
+        on Yelp--- check it out!
+</h6>
+</div>
+
+{% endblock %}

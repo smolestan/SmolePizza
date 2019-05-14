@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #F4542E">
+    <a class="navbar-brand m-1 px-2 font-weight-bold" id="brand" href="{% url 'index' %}" style="color:white">Pinocchio's Pizza & Subs
+        <a class="btn btn-outline-light mx-1" href="{% url 'index' %}" role="button">Menu</a>
+        {% if request.user.is_staff %}
+        <a class="btn btn-outline-light mx-1" href="{% url 'all_orders' %}" role="button">All Orders</a>
+        {% endif %}
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-1">
+                        <span class="badge badge-light">{{ user.first_name }}</span>
+                    </li>
+        
+            <li class="nav-item p-1">
+                <a class="btn btn-outline-light" href="{% url 'cart' %}" role="button">Cart <span class="badge badge-light">{{ request.session.items_total }}</span></a>
+            </li>
+
+            <li class="nav-item p-1">
+                    <a class="btn btn-outline-light" href="{% url 'user_orders' %}" role="button">Orders</a>
+                </li>    
+
+            <li class="nav-item p-1">
+                <a class="btn btn-outline-light" href="{% url 'logout' %}" role="button">Logout</a>
+            </li>    
+    
+        </ul>
+    </div>
+</nav>

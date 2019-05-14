@@ -1,0 +1,77 @@
+{% extends "products/base.html" %}
+
+{% block title %}
+Orders
+{% endblock %}
+
+{% block body %}
+
+{% include "products/navbar.html" %}
+
+<div class="container">
+
+    {% if empty %}
+
+    <h1> {{ empty_message }}</h1>
+
+    {% else %}
+
+    <table class="table">
+
+        <thead>
+            <th>Orders</th>
+            <th>Total</th>
+            <th>Created</th>
+            <th>Status</th>
+        </thead>
+        {% for item in request.user.order_set.all %}
+        <tr>
+            <td>
+                Order #{{ item.order_id }}
+
+
+                <ul>
+                    {% for item in item.cart.cartitem_set.all %}
+
+                    <li>
+                        {{ item.quantity }} {{ item.size }} size {{ item.product }} for {{ item.line_total }}
+
+                        <ul>
+                            {% if item.topping1 %}
+                            <li>{{ item.topping1 }}</li>
+                            {% endif %}
+                            {% if item.topping2 %}
+                            <li>{{ item.topping2 }}</li>
+                            {% endif %}
+                            {% if item.topping3 %}
+                            <li>{{ item.topping3 }}</li>
+                            {% endif %}
+                        </ul>
+
+                    </li>
+
+                    {% endfor %}
+                </ul>
+            <td class="align-middle">
+                {{ item.cart.total }}
+            </td>
+
+            </td>
+            <td class="align-middle">
+                {{ item.timestamp }}
+            </td>
+            <td class="align-middle">
+                {{ item.status }}
+            </td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+
+    {% endif %}
+
+    {% endblock %}
