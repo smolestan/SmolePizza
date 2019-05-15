@@ -24,6 +24,10 @@ class Product(models.Model):
     price_small = models.DecimalField(blank=True, null=True, max_digits=6, decimal_places=2)
     price_large = models.DecimalField(blank=True, null=True, max_digits=6, decimal_places=2)
     price = models.DecimalField(blank=True, null=True, max_digits=6, decimal_places=2)
+    image1 = models.ImageField(default="cheese.png", upload_to='product_pics')
+    image2 = models.ImageField(default="regular.png", upload_to='product_pics')
+    image3 = models.ImageField(default="sicilian.png", upload_to='product_pics')
+
     
     def __str__(self):
         return f"{self.kind} {self.variation}"
