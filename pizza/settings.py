@@ -137,7 +137,7 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'products/static')
+    os.path.join(BASE_DIR, 'products/static'),
 ]
 
 AWS_S3_FILE_OVERWRITE = False
