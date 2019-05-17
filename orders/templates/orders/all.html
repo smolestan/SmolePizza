@@ -1,7 +1,7 @@
 {% extends "products/base.html" %}
-
+{% load i18n %}
 {% block title %}
-Orders
+{% trans "Pinocchio's Pizza & Subs" %}
 {% endblock %}
 
 {% block body %}
@@ -24,12 +24,12 @@ Orders
                     {% if fil %}
                         {{ fil }}
                     {% else %}
-                        All Orders
+                    {% trans "All Orders" %}
                     {% endif %}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <button class="dropdown-item" name="filter" type="submit"
-                        value="All Orders">All Orders</button>
+                        value="All Orders">{% trans "All Orders" %}</button>
                     {% for statuse in statuses %}
                     <button class="dropdown-item" name="filter" type="submit"
                         value="{{ statuse }}">{{ statuse }}</button>
@@ -40,23 +40,23 @@ Orders
         <table class="table">
 
             <thead>
-                <th>Orders</th>
-                <th>Customer</th>
-                <th>Total</th>
-                <th>Created</th>
-                <th>Status</th>
+                <th>{% trans "Orders" %}</th>
+                <th>{% trans "Customer" %}</th>
+                <th>{% trans "Total" %}</th>
+                <th>{% trans "Created" %}</th>
+                <th>{% trans "Status" %}</th>
             </thead>
             {% for item in all_orders %}
             <tr>
                 <td>
-                    Order #{{ item.order_id }}
+                    {% trans "Order #" %}{{ item.order_id }}
 
 
                     <ul>
                         {% for item in item.cart.cartitem_set.all %}
 
                         <li>
-                            {{ item.quantity }} {{ item.size }} size {{ item.product }} for ${{ item.line_total }}
+                            {{ item.quantity }} {{ item.size }} {{ item.product }} {% trans "for" %} ${{ item.line_total }}
 
                             <ul>
                                 {% if item.topping1 %}

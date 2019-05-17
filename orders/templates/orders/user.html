@@ -1,7 +1,7 @@
 {% extends "products/base.html" %}
-
+{% load i18n %}
 {% block title %}
-Orders
+{% trans "Pinocchio's Pizza & Subs" %}
 {% endblock %}
 
 {% block body %}
@@ -19,22 +19,22 @@ Orders
     <table class="table">
 
         <thead>
-            <th>Orders</th>
-            <th>Total</th>
-            <th>Created</th>
-            <th>Status</th>
+            <th>{% trans "Orders" %}</th>
+            <th>{% trans "Total" %}</th>
+            <th>{% trans "Created" %}</th>
+            <th>{% trans "Status" %}</th>
         </thead>
         {% for item in request.user.order_set.all %}
         <tr>
             <td>
-                Order #{{ item.order_id }}
+                {% trans "Order #" %}{{ item.order_id }}
 
 
                 <ul>
                     {% for item in item.cart.cartitem_set.all %}
 
                     <li>
-                        {{ item.quantity }} {{ item.size }} size {{ item.product }} for {{ item.line_total }}
+                        {{ item.quantity }} {{ item.size }} {{ item.product }} {% trans "for" %} ${{ item.line_total }}
 
                         <ul>
                             {% if item.topping1 %}
@@ -53,7 +53,7 @@ Orders
                     {% endfor %}
                 </ul>
             <td class="align-middle">
-                {{ item.cart.total }}
+                ${{ item.cart.total }}
             </td>
 
             </td>

@@ -1,0 +1,558 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-17 19:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/forms.py:6 accounts/forms.py:32
+msgid "Username"
+msgstr "Логин"
+
+#: accounts/forms.py:7 accounts/forms.py:33
+msgid "Password"
+msgstr "Пароль"
+
+#: accounts/forms.py:14
+msgid "Invalid Username"
+msgstr "Неверный логин"
+
+#: accounts/forms.py:25
+msgid "Invalid Password"
+msgstr "Неверный пароль"
+
+#: accounts/forms.py:34
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+#: accounts/forms.py:35
+msgid "First Name"
+msgstr "Имя"
+
+#: accounts/forms.py:36
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: accounts/forms.py:37
+msgid "Email"
+msgstr "Эл. почта"
+
+#: accounts/forms.py:47
+msgid "This username has already been registered"
+msgstr "Этот логин уже зарегистрирован"
+
+#: accounts/forms.py:54
+msgid "This email has already been registered"
+msgstr "Этот эл.адрес уже зарегистрирован"
+
+#: accounts/forms.py:61
+msgid "Passwords do not match"
+msgstr "Пароли не совпадают"
+
+#: accounts/templates/accounts/login.html:5
+#: accounts/templates/accounts/login.html:10 carts/templates/carts/view.html:4
+#: orders/templates/orders/all.html:4 orders/templates/orders/user.html:4
+#: products/templates/products/index.html:5
+#: products/templates/products/kinds.html:4
+#: products/templates/products/navbar.html:5
+#: products/templates/products/single.html:4
+msgid "Pinocchio's Pizza & Subs"
+msgstr "Пинокио Пицца и Сэндвичи"
+
+#: accounts/templates/accounts/login.html:36
+msgid "Login"
+msgstr "Войти"
+
+#: accounts/templates/accounts/login.html:58
+msgid "Welcome to Pinocchio's Pizza & Subs"
+msgstr "Добро пожаловать! Пицерия Пинокио"
+
+#: accounts/templates/accounts/login.html:60
+msgid "74 Winthrop Street"
+msgstr "Винтроп Стрит, 74"
+
+#: accounts/templates/accounts/login.html:60
+msgid "Harvard Square"
+msgstr "Гарвард Сквер"
+
+#: accounts/templates/accounts/login.html:70
+msgid "Create an account"
+msgstr "Регистрация"
+
+#: accounts/templates/accounts/login.html:100
+msgid "Register"
+msgstr "Зарегистрироваться"
+
+#: accounts/templates/accounts/login.html:125
+msgid ""
+"Noch's has reached a landmark this year......50 years in business! We've "
+"been feeding Harvard and the surrounding area since 1966!"
+msgstr ""
+"В этом году пицерия Пинокио достигла важной отметки...50 лет в бизнесе! Мы "
+"кормим Гарвард и его окрестности с 1966 года!"
+
+#: accounts/templates/accounts/login.html:126
+msgid ""
+"We sell award-winning sicilian-style pizza and mouth-watering steak subs! We "
+"have over 500 reviews on Yelp--- check it out!"
+msgstr ""
+"Мы продаем отмеченные наградами сицилийскую пиццу и аппетитные стейки! У нас "
+"уже более 500 отзывов на Yelp --- проверьте это!"
+
+#: accounts/views.py:38
+msgid "Account created, please login"
+msgstr "Вы зарегистрированы, можете войти"
+
+#: carts/templates/carts/view.html:22
+msgid "Item"
+msgstr "Продукт"
+
+#: carts/templates/carts/view.html:23
+msgid "Size"
+msgstr "Размер"
+
+#: carts/templates/carts/view.html:24
+msgid "Price"
+msgstr "Цена"
+
+#: carts/templates/carts/view.html:25
+msgid "Qty"
+msgstr "Кол-во"
+
+#: carts/templates/carts/view.html:26 orders/templates/orders/all.html:45
+#: orders/templates/orders/user.html:23
+msgid "Total"
+msgstr "Итого"
+
+#: carts/templates/carts/view.html:63
+msgid "Remove"
+msgstr "Удалить"
+
+#: carts/templates/carts/view.html:83
+msgid "Checkout"
+msgstr "Подтвердить"
+
+#: carts/templates/carts/view.html:86
+msgid ""
+"By pressing Checkout button you confirm the items in the shopping cart, and "
+"the total for placing an order."
+msgstr ""
+"Нажимая кнопку подтвердить вы соглашаетесь с перечнем продуктов в корзине и "
+"общей суммой заказа."
+
+#: carts/views.py:25
+msgid "Your Cart is Empty"
+msgstr "Ваша корзина пуста"
+
+#: orders/templates/orders/all.html:27 orders/templates/orders/all.html:32
+#: products/templates/products/navbar.html:29
+msgid "All Orders"
+msgstr "Все заказы"
+
+#: orders/templates/orders/all.html:43 orders/templates/orders/user.html:22
+#: products/templates/products/navbar.html:48
+msgid "Orders"
+msgstr "Заказы"
+
+#: orders/templates/orders/all.html:44
+msgid "Customer"
+msgstr "Покупатель"
+
+#: orders/templates/orders/all.html:46 orders/templates/orders/user.html:24
+msgid "Created"
+msgstr "Создан"
+
+#: orders/templates/orders/all.html:47 orders/templates/orders/user.html:25
+msgid "Status"
+msgstr "Статус"
+
+#: orders/templates/orders/all.html:52 orders/templates/orders/user.html:30
+msgid "Order #"
+msgstr "Заказ №"
+
+#: orders/templates/orders/all.html:59 orders/templates/orders/user.html:37
+msgid "for"
+msgstr "за"
+
+#: products/templates/products/index.html:14
+#: products/templates/products/navbar.html:27
+msgid "Menu"
+msgstr "Меню"
+
+#: products/templates/products/navbar.html:44
+msgid "Cart"
+msgstr "Корзина"
+
+#: products/templates/products/navbar.html:52
+msgid "Logout"
+msgstr "Выйти"
+
+#: products/templates/products/single.html:90
+msgid "Size & Price"
+msgstr "Размер и Цена"
+
+#: products/templates/products/single.html:95
+msgid "Single size price:"
+msgstr "Единый размер, цена:"
+
+#: products/templates/products/single.html:98
+msgid "Small size price:"
+msgstr "Маленький размер, цена:"
+
+#: products/templates/products/single.html:101
+msgid "Large size price:"
+msgstr "Большой размер, цена"
+
+#: products/templates/products/single.html:109
+msgid "Quantity"
+msgstr "Количество"
+
+#: products/templates/products/single.html:116
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: vinaigrette-deleteme.py:2
+msgid "large"
+msgstr "большая"
+
+#: vinaigrette-deleteme.py:3
+msgid "-"
+msgstr ""
+
+#: vinaigrette-deleteme.py:4
+msgid "small"
+msgstr "маленькая"
+
+#: vinaigrette-deleteme.py:5
+msgid "Regular Pizza"
+msgstr "Стандартная Пицца"
+
+#: vinaigrette-deleteme.py:6
+msgid ""
+"Our Regular pizza is a thin-crust or Neapolitan pizza. They come in 2 sizes: "
+"small (12\" in diameter) and large (16\" in diameter)."
+msgstr ""
+"Наша стандартная пицца - это пицца на тонком корже, неаполитанская пицца. "
+"Представлена в двух размерах:маленькая (12 дюймов в диаметре) и большая (16 "
+"дюймов в диаметре)."
+
+#: vinaigrette-deleteme.py:7
+msgid "Sicilian Pizza"
+msgstr "Сицилийская Пицца"
+
+#: vinaigrette-deleteme.py:8
+msgid ""
+"Our Sicilian pizza is a deep-dish or thick-crust pizza. We sell them in a 9-"
+"slice or a 15-slice size."
+msgstr ""
+"Наша сицилийская пицца - это пицца на глубоком, толстом корже. Представлена "
+"в размере на 9 или 15 долей."
+
+#: vinaigrette-deleteme.py:9
+msgid "Subs"
+msgstr "Сэндвичи"
+
+#: vinaigrette-deleteme.py:10
+msgid ""
+"A submarine sandwich, also known as a sub, hoagie, grinder, po'boy, or "
+"Italian sandwich, is a type of sandwich consisting of a length of bread or "
+"roll split lengthwise and filled with a variety of meats, cheeses, "
+"vegetables, and condiments."
+msgstr ""
+"Сэндвич подводная лодка, или саб, итальянский - это тип сэндвича, состоящий "
+"из разрезанного по длинне хлеба или булочки, заполненного различными видами "
+"мяса, сыров и приправ."
+
+#: vinaigrette-deleteme.py:11
+msgid "Pasta"
+msgstr "Паста"
+
+#: vinaigrette-deleteme.py:12
+msgid ""
+"A dish originally from Italy consisting of dough made from durum wheat and "
+"water, extruded or stamped into various shapes and cooked in boiling water."
+msgstr ""
+"Блюдо из Италии, состоящее из теста, изготовленного из твердой пшеницы и "
+"воды, экструдированного или штампованного в различные формы и "
+"приготовленного в кипящей воде."
+
+#: vinaigrette-deleteme.py:13
+msgid "Salads"
+msgstr "Салаты"
+
+#: vinaigrette-deleteme.py:14
+msgid ""
+"A cold dish of various mixtures of raw or cooked vegetables, usually "
+"seasoned with oil, vinegar, or other dressing and sometimes accompanied by "
+"meat, fish, or other ingredients."
+msgstr ""
+"Холодное блюдо из различных смесей сырых или приготовленных овощей, обычно "
+"приправленное маслом, уксусом или другой заправкой, а иногда в сопровождении "
+"мяса, рыбы или других ингредиентов."
+
+#: vinaigrette-deleteme.py:15
+msgid "Dinner Platters"
+msgstr "Большое блюдо"
+
+#: vinaigrette-deleteme.py:16
+msgid ""
+"A main dish served on a platter with one or more side dishes, such as a "
+"salad or french fries."
+msgstr ""
+"Основное блюдо подается на блюде с одним или несколькими гарнирами, такими "
+"как салат или картофель фри."
+
+#: vinaigrette-deleteme.py:17
+msgid "Pending"
+msgstr "В ожидании"
+
+#: vinaigrette-deleteme.py:18
+msgid "Processing"
+msgstr "Готовится"
+
+#: vinaigrette-deleteme.py:19
+msgid "Complete"
+msgstr "Выполнен"
+
+#: vinaigrette-deleteme.py:20
+msgid "Pepperoni"
+msgstr "Пепперони"
+
+#: vinaigrette-deleteme.py:21
+msgid "Sausage"
+msgstr "Колбаса"
+
+#: vinaigrette-deleteme.py:22
+msgid "Mushrooms"
+msgstr "Грибы"
+
+#: vinaigrette-deleteme.py:23
+msgid "Onions"
+msgstr "Лук"
+
+#: vinaigrette-deleteme.py:24
+msgid "Ham"
+msgstr "Ветчина"
+
+#: vinaigrette-deleteme.py:25
+msgid "Canadian Bacon"
+msgstr "Канадский бекон"
+
+#: vinaigrette-deleteme.py:26
+msgid "Pineapple"
+msgstr "Ананас"
+
+#: vinaigrette-deleteme.py:27
+msgid "Eggplant"
+msgstr "Баклажан"
+
+#: vinaigrette-deleteme.py:28
+msgid "Tomato and Basil"
+msgstr "Помидор и базилик"
+
+#: vinaigrette-deleteme.py:29
+msgid "Green Peppers"
+msgstr "Зеленый перец"
+
+#: vinaigrette-deleteme.py:30 vinaigrette-deleteme.py:62
+msgid "Hamburger"
+msgstr "Гамбургер"
+
+#: vinaigrette-deleteme.py:31
+msgid "Spinach"
+msgstr "Шпинат"
+
+#: vinaigrette-deleteme.py:32
+msgid "Artichoke"
+msgstr "Артишок"
+
+#: vinaigrette-deleteme.py:33
+msgid "Buffalo Chicken"
+msgstr "Цыпленок Буффало"
+
+#: vinaigrette-deleteme.py:34
+msgid "Barbecue Chicken"
+msgstr "Курица Барбекю"
+
+#: vinaigrette-deleteme.py:35
+msgid "Anchovies"
+msgstr "Анчоусы"
+
+#: vinaigrette-deleteme.py:36
+msgid "Black Olives"
+msgstr "Маслины"
+
+#: vinaigrette-deleteme.py:37
+msgid "Fresh Garlic"
+msgstr "Свежий чеснок"
+
+#: vinaigrette-deleteme.py:38
+msgid "Zucchini"
+msgstr "Цуккини"
+
+#: vinaigrette-deleteme.py:39
+msgid "Cheese"
+msgstr "Сырная"
+
+#: vinaigrette-deleteme.py:40
+msgid "Pizza with cheese as only one topping"
+msgstr "Только сыр"
+
+#: vinaigrette-deleteme.py:41
+msgid "One topping"
+msgstr "Один топинг"
+
+#: vinaigrette-deleteme.py:42
+msgid "You can choose one topping"
+msgstr "Можете выбрать один топинг"
+
+#: vinaigrette-deleteme.py:43
+msgid "Two toppings"
+msgstr "Два топинга"
+
+#: vinaigrette-deleteme.py:44
+msgid "You can choose two toppings"
+msgstr "Можете выбрать два топинга"
+
+#: vinaigrette-deleteme.py:45
+msgid "Three toppings"
+msgstr "Три топинга"
+
+#: vinaigrette-deleteme.py:46
+msgid "You can choose three toppings"
+msgstr "Можете выбрать три топинга"
+
+#: vinaigrette-deleteme.py:47
+msgid "Special"
+msgstr "Специальная"
+
+#: vinaigrette-deleteme.py:48
+msgid "Pepperoni, mushroom, sausage, green peppers and onions."
+msgstr "Пепперони, грибы, колбаса, зеленый перец и лук. "
+
+#: vinaigrette-deleteme.py:49
+msgid "Italian"
+msgstr "Итальянский"
+
+#: vinaigrette-deleteme.py:50
+msgid "Ham + Cheese"
+msgstr "Ветчина и сыр"
+
+#: vinaigrette-deleteme.py:51
+msgid "Meatball"
+msgstr "Фрикаделька"
+
+#: vinaigrette-deleteme.py:52
+msgid "Tuna"
+msgstr "Тунец"
+
+#: vinaigrette-deleteme.py:53
+msgid "Turkey"
+msgstr "Индейка"
+
+#: vinaigrette-deleteme.py:54
+msgid "Chicken Parmigiana"
+msgstr "Курица Парминьяна"
+
+#: vinaigrette-deleteme.py:55
+msgid "Eggplant Parmigiana"
+msgstr "Баклажан Парминьяна"
+
+#: vinaigrette-deleteme.py:56
+msgid "Steak"
+msgstr "Стейк"
+
+#: vinaigrette-deleteme.py:57
+msgid "Steak + Cheese"
+msgstr "Стейк с сыром"
+
+#: vinaigrette-deleteme.py:58
+msgid "+ Mushrooms"
+msgstr "+ грибы"
+
+#: vinaigrette-deleteme.py:59
+msgid "+ Green Peppers"
+msgstr "+ зеленый перец"
+
+#: vinaigrette-deleteme.py:60
+msgid "+ Onions"
+msgstr "+ лук"
+
+#: vinaigrette-deleteme.py:61
+msgid "Sausage, Peppers & Onions"
+msgstr "Колбаса, перец и лук"
+
+#: vinaigrette-deleteme.py:63
+msgid "Cheeseburger"
+msgstr "Чизбургер"
+
+#: vinaigrette-deleteme.py:64
+msgid "Fried Chicken"
+msgstr "Жареная курочка"
+
+#: vinaigrette-deleteme.py:65
+msgid "Veggie"
+msgstr "Вегетарианский"
+
+#: vinaigrette-deleteme.py:66
+msgid "Extra Cheese on any sub"
+msgstr "Дополнительная порция сыра к сэндвичу"
+
+#: vinaigrette-deleteme.py:67
+msgid "Baked Ziti w/Mozzarella"
+msgstr "Запеченный Зити с Моцареллой"
+
+#: vinaigrette-deleteme.py:68
+msgid "Baked Ziti w/Meatballs"
+msgstr "Запеченная зити с фрикадельками"
+
+#: vinaigrette-deleteme.py:69
+msgid "Baked Ziti w/Chicken"
+msgstr "Запеченная зити с курицей"
+
+#: vinaigrette-deleteme.py:70
+msgid "Garden Salad"
+msgstr "Садовый салат"
+
+#: vinaigrette-deleteme.py:71
+msgid "Greek Salad"
+msgstr "Греческий салат"
+
+#: vinaigrette-deleteme.py:72
+msgid "Antipasto"
+msgstr "Антипасто"
+
+#: vinaigrette-deleteme.py:73
+msgid "Salad w/Tuna"
+msgstr "Салат с тунцом"
+
+#: vinaigrette-deleteme.py:74
+msgid "Baked Ziti"
+msgstr "Запеченная зити"
+
+#: vinaigrette-deleteme.py:75
+msgid "Meatball Parm"
+msgstr "Фрикаделька Парм"
+
+#: vinaigrette-deleteme.py:76
+msgid "Chicken Parm"
+msgstr "Куриный Парм"
+
+#: vinaigrette/management/commands/makemessages.py:147
+msgid "Obsolete translation kept alive with Viniagrette"
+msgstr ""

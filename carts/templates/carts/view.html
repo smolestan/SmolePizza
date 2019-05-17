@@ -1,7 +1,7 @@
 {% extends "products/base.html" %}
-
+{% load i18n %}
 {% block title %}
-Cart
+{% trans "Pinocchio's Pizza & Subs" %}
 {% endblock %}
 
 {% block body %}
@@ -19,11 +19,11 @@ Cart
     <table class="table">
 
         <thead>
-            <th>Item</th>
-            <th>Size</th>
-            <th>Price</th>
-            <th>Qty</th>
-            <th>Total</th>
+            <th>{% trans "Item" %}</th>
+            <th>{% trans "Size" %}</th>
+            <th>{% trans "Price" %}</th>
+            <th>{% trans "Qty" %}</th>
+            <th>{% trans "Total" %}</th>
             <th></th>
         </thead>
 
@@ -60,7 +60,7 @@ Cart
                     <form class="form" method='POST' action='{% url "update_cart" item.product.id %}'>
                         {% csrf_token %}
                         <input name='rem' value="{{ item.id }}" id='rem' hidden>
-                        <input class="btn btn-outline-dark my-1" type="submit" value='Remove'>
+                        <input class="btn btn-outline-dark my-1" type="submit" value="{% trans 'Remove' %}">
                     </form>
                 </td>
             </tr>
@@ -80,10 +80,10 @@ Cart
 
     </table>
     <div class="row justify-content-center align-items-center">
-        <a class="btn btn-warning" href="{% url 'checkout' %}" role="button">Checkout</a>
+        <a class="btn btn-warning" href="{% url 'checkout' %}" role="button">{% trans "Checkout" %}</a>
     </div>
     <div class="row justify-content-center align-items-center">
-        <p>By pressing Checkout button you confirm the items in the shopping cart, and the total for placing an order.</p>
+        <p>{% trans "By pressing Checkout button you confirm the items in the shopping cart, and the total for placing an order." %}</p>
     </div>
 </div>
 

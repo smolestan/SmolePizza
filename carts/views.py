@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from django.utils.translation import gettext as _
+
 
 # Create your views here.
 
@@ -20,7 +22,7 @@ def view(request):
         cart = Cart.objects.get(id=the_id)
         context = {"cart": cart}
     else:
-        empty_message = "Your Cart is Empty, please keep shopping"
+        empty_message = _("Your Cart is Empty")
         context = {"empty": True, "empty_message": empty_message}
 
     return render(request, "carts/view.html", context)

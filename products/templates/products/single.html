@@ -1,7 +1,7 @@
 {% extends "products/base.html" %}
-{% load static %}
+{% load static i18n %}
 {% block title %}
-Pizza
+{% trans "Pinocchio's Pizza & Subs" %}
 {% endblock %}
 
 {% block body %}
@@ -87,18 +87,18 @@ Pizza
 
                 <div class="form-group row">
                     <div class="col-md-4">
-                        <label for="size" class="col-form-label">Size & Price</label>
+                        <label for="size" class="col-form-label">{% trans "Size & Price" %}</label>
                     </div>
                     <div class="col-md-8">
                         <select class='form-control' name="size" id="size" required>
                             {% if product.price %}
-                            <option selected value="-">Single size price: {{ product.price }}</option>
+                            <option selected value="-">{% trans "Single size price:" %} {{ product.price }}</option>
                             {% endif %}
                             {% if product.price_small %}
-                            <option selected value="small">Small size price: {{ product.price_small }}</option>
+                            <option selected value="small">{% trans "Small size price:" %} {{ product.price_small }}</option>
                             {% endif %}
                             {% if product.price_large %}
-                            <option selected value="large">Large size price: {{ product.price_large }}</option>
+                            <option selected value="large">{% trans "Large size price:" %} {{ product.price_large }}</option>
                             {% endif %}
                         </select>
                     </div>
@@ -106,14 +106,14 @@ Pizza
 
                 <div class="form-group row">
                     <div class="col-md-4">
-                        <label for="qty" class="col-form-label my-1">Quantity</label>
+                        <label for="qty" class="col-form-label my-1">{% trans "Quantity" %}</label>
                     </div>
                     <div class="col-md-4">
                         <input class="my-2" style="width: 3rem; text-align: right" name='qty' type="number" value="1"
                             id='qty' min="1">
                     </div>
                     <div class="col-md-4">
-                        <input id=addToCart class="btn btn-outline-dark my-1" type="submit" value='Add to cart' {% if product.variation == OneTop or product.variation == TwoTop or product.variation == ThreeTop %}disabled{% endif %}>
+                        <input id=addToCart class="btn btn-outline-dark my-1" type="submit" value="{% trans "Add to cart" %}" {% if product.variation == OneTop or product.variation == TwoTop or product.variation == ThreeTop %}disabled{% endif %}>
                     </div>
                 </div>
             </form>

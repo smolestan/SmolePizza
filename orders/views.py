@@ -42,6 +42,7 @@ def all_orders(request):
                 return render(request, "orders/all.html", context)
             else:
                 all_orders = Order.objects.filter(status__title=fil)
+                print(all_orders)
                 context["all_orders"] = all_orders
                 context["fil"] = fil
                 return render(request, "orders/all.html", context)

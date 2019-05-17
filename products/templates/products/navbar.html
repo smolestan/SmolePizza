@@ -1,10 +1,33 @@
+{% load i18n %}
+
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #F4542E">
-    <a class="navbar-brand m-1 px-2 font-weight-bold" id="brand" href="{% url 'index' %}" style="color:white">Pinocchio's Pizza & Subs
-        <a class="btn btn-outline-light mx-1" href="{% url 'index' %}" role="button">Menu</a>
-        {% if request.user.is_staff %}
-        <a class="btn btn-outline-light mx-1" href="{% url 'all_orders' %}" role="button">All Orders</a>
-        {% endif %}
-    </a>
+        
+    <a class="navbar-brand m-1 px-2 font-weight-bold" id="brand" href="{% url 'index' %}" style="color:white">{% trans "Pinocchio's Pizza & Subs" %}</a>    
+
+    <form class="form m-3" action="{% url 'set_language' %}" method="POST">
+        {% csrf_token %}
+        <input type='hidden' name='next' value='{{ redirect_to }}'>
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        <div class="dropdown">
+            <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% for language in languages %}
+                {% if language.code == LANGUAGE_CODE %}{{ language.name_local }}{% endif %}
+                {% endfor %}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% for language in languages %}
+                <button class="dropdown-item" name="language" type="submit" value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</button>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+
+    <a class="btn btn-outline-light mx-1" href="{% url 'index' %}" role="button">{% trans "Menu" %}</a>
+    {% if request.user.is_staff %}
+    <a class="btn btn-outline-light mx-1" href="{% url 'all_orders' %}" role="button">{% trans "All Orders" %}</a>
+    {% endif %}
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,15 +41,15 @@
                     </li>
         
             <li class="nav-item p-1">
-                <a class="btn btn-outline-light" href="{% url 'cart' %}" role="button">Cart <span class="badge badge-light">{{ request.session.items_total }}</span></a>
+                <a class="btn btn-outline-light" href="{% url 'cart' %}" role="button">{% trans "Cart" %} <span class="badge badge-light">{{ request.session.items_total }}</span></a>
             </li>
 
             <li class="nav-item p-1">
-                    <a class="btn btn-outline-light" href="{% url 'user_orders' %}" role="button">Orders</a>
+                    <a class="btn btn-outline-light" href="{% url 'user_orders' %}" role="button">{% trans "Orders" %}</a>
                 </li>    
 
             <li class="nav-item p-1">
-                <a class="btn btn-outline-light" href="{% url 'logout' %}" role="button">Logout</a>
+                <a class="btn btn-outline-light" href="{% url 'logout' %}" role="button">{% trans "Logout" %}</a>
             </li>    
     
         </ul>
