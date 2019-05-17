@@ -6,6 +6,7 @@ class Kind(models.Model):
     title = models.CharField(max_length=64)
     description = models.TextField()
     slug = models.SlugField(unique=True)
+    image = models.ImageField(default="cheese.png", upload_to='kind_pics')
 
     def __str__(self):
         return f"{self.title}"
