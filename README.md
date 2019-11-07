@@ -1,7 +1,6 @@
-# Project 3
+# Smolepizza
 
 Web Programming with Python and JavaScript
-# project3
 
 In this project I have built web application for handling a pizza restaurant online orders. Users are able to browse the restaurant's menu, add items to their cart, and submit their orders. Meanwhile, the site administrators are able to add and update menu items using Django Admin, and restaurant staff are able to view and change status of orders that have been placed by customers.
 
